@@ -71,3 +71,22 @@ $coder.email = "coder@domain.com"
 
 Write-Output $coder
 
+
+# Option: #3 PSCustomObject
+# Option 3: pscustomobject type accelerator (PSv3+ required)
+# The ordered type accelerator forces PowerShell to keep our properties in the order that we defined them. You don't
+# need the ordered type accelerator to use [PSCustomObject]:
+
+$newObject = [PSCustomObject][Ordered] @{
+    id       = 1
+    username = $env:USERNAME
+    email    = "$($env:USERNAME)@domain.com"
+}
+# Add new element
+$newObject = $newObject | Select-Object *, @{ 
+    label      = "password" 
+    expression = { "MyPassword" } 
+}
+
+Write-Host "PSCustomObject"
+Write-Output $newObject
