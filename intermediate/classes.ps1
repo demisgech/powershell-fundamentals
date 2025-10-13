@@ -10,7 +10,7 @@
 # $datetime
 
 # This is the same technique that you can use to list overload definitions for any method
-# e.g 
+# e.g
 # 'abc'.CompareTo
 
 # For earlier versions you can create your own function to list available constructors:
