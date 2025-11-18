@@ -52,6 +52,9 @@ class Circle : Shape {
 $circle = [Circle]::new("Red", 5)
 Write-Host $circle
 
+$area = $circle.GetArea()
+Write-Host "Circle Area: $area"
+
 
 class Rectangle : Shape {
     [double] $width
@@ -96,5 +99,8 @@ class Rectangle : Shape {
 }
 
 $rectangle = [Rectangle]::new("Blue", 4, 6)
-Write-Host $rectangle
+Write-Host $rectangle;
+
+$area = $rectangle.GetArea()
+Write-Host "Rectangle Area: $area"
 

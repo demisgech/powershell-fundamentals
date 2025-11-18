@@ -10,11 +10,11 @@
 # $result = $names | Group-Object; 
 # Write-Host $result;
 
-$directory = dir "C:\Windows\HP";
-$result = $directory | Group-Object Name,FullName,Attributes;
-$result = $directory | group Name,FullName,Attributes;
+$directory = dir "C:\Users\demis";
+$result = $directory | Group-Object Name, FullName, Attributes;
+# $result = $directory | group Name, FullName, Attributes;
 
-# Write-Host $result;
+Write-Output $result;
 
 $response = cd | select -First 1 *;
 Write-Output $response;

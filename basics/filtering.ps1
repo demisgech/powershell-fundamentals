@@ -5,10 +5,23 @@
 # as well as addition, subtraction, etc.
 # Filtering: Where-Object/Where/?
 
-$names = @("Alber","Alex","John","Joey","Kebede","Dereje");
+$names = @("Alber", "Alex", "John", "Joey", "Kebede", "Dereje");
 
 $result = $names | Where-Object { $_ -like "J*" };
 $result = $names | Where-Object { $_ -ilike "J*" };
 $result = $names | where { $_ -ilike "D*" }; # where alias for Where-Object
-$result = $names | ? { $_ -ilike "A*" }; # ? alias for Where-Object
-Write-Host $result;
+$result = $names | ? { $_ -ilike "d*" }; # ? alias for Where-Object
+# Write-Host $result
+
+$directory = dir "C:\\Users\\demis";
+
+# $group = $directory | Group-Object Name
+# Write-Output $group;
+$result = $directory | Where-Object { $_ -like ".e*" }
+
+foreach ( $res in $result) {
+    Write-Host $res
+    
+    # cd $res
+}
+# Write-Output $result
